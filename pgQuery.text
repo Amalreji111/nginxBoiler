@@ -1,0 +1,29 @@
+
+
+INSERT INTO permissions (permission)
+VALUES ('modify_Exam'),
+       ('modifyAny_Exam'),
+       ('create_Exam'),
+       ('createAny_Exam'),
+       ('read_Exam'),
+       ('ReadAny_Exam'),
+       ('publish_Exam'),
+       ('publishAny_Exam'),
+       ('approve_Exam'),
+       ('manage_Exam'),
+       ('delete_Exam'),
+       ('deleteAny_Exam'),
+       ('submit_Exam'),
+       ('viewTab_Registration')
+RETURNING id;
+
+
+ INSERT INTO role ("ROLE_NAME","permission_id")
+VALUES ('approver',7),
+       ('publisher',7),
+       ('creator',8)
+RETURNING id;
+ INSERT INTO role_permissions_permissions ("roleId","permissionsId")
+VALUES (3,1),
+       (3,3),
+       (3,5);
